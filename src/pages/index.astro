@@ -1,50 +1,114 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="intro-section">
+        <div class="intro-card">
+          <div class="content-section">
+            <h4>这个博客的意义</h4>
+            <p>
+              在这个科技迅猛发展的世界里，我对AI时代的到来感到无比兴奋。但我的兴奋点并非AI技术本身，而是它作为一种强大的工具，能够帮助我们突破创造的边界，将想法转化为现实的速度前所未有地提升。
+            </p>
+
+            <p>
+              作为一个开发者，我热爱独立开发的过程。那种将一个想法从无到有变成现实的感觉，是无与伦比的满足。在这里，我会分享我的创作过程、技术心得、对AI时代的思考。
+              希望我的分享能为你带来一些启发,让我们一起在这个充满可能性的时代，探索创造的无限边界。
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer />
+
+    <style>
+      .page-title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+      }
+
+      .intro-section {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .intro-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .intro-card h3 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .divider {
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+        margin: 1rem auto 2rem;
+        width: 10%;
+        border-radius: 2px;
+      }
+
+      .content-section {
+        margin-bottom: 2rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .content-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .content-section::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, var(--accent), transparent);
+        border-radius: 3px;
+      }
+
+      .content-section h4 {
+        margin-top: 0;
+        color: var(--accent);
+        font-size: 1.4rem;
+      }
+
+      .content-section p {
+        margin-top: 0.75rem;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 768px) {
+        .intro-card {
+          padding: 1.5rem;
+        }
+
+        .content-section {
+          padding-left: 1rem;
+        }
+      }
+    </style>
+  </body>
 </html>
